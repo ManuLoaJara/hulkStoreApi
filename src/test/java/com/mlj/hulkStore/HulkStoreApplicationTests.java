@@ -1,4 +1,4 @@
-package com.test.hulkStore;
+package com.mlj.hulkStore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
