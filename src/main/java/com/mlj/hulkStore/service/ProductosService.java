@@ -14,7 +14,20 @@ public class ProductosService {
 	@Autowired
 	ProductosRepository repository;
 	
+	int movimiento_salida = 6;
+	
 	public List<Producto> getProductos(){
 		return repository.getProductos();
+	}
+	
+	public Boolean compra(List<Producto> request){
+		Boolean response = false;
+		for (Producto prod : request) {
+			prod.setStock(prod.getStock() - prod.getCantidad());
+			response = repository.update(prod);
+			repository.insertKardex(prod, movimiento_salida);
+		}
+		return response;
+		
 	}
 }
