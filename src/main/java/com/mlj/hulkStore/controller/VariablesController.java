@@ -27,7 +27,7 @@ public class VariablesController {
 	}
 	
 	@PostMapping("/getByCategory")
-	public List<Variable> getByCategory(@RequestBody Map<String, String> request){
-		return service.getByCategory(request.get("category"));
+	public List<Variable> getByCategory(@RequestBody String request){
+		return service.getByCategory(request);
 	}
 }

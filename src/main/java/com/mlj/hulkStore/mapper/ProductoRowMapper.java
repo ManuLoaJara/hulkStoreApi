@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.mlj.hulkStore.model.Producto;
 
-public class ProductoRowMapper implements RowMapper<Producto>{
+public class ProductoRowMapper implements RowMapper<Producto> {
 
 	@Override
 	public Producto mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -17,7 +17,8 @@ public class ProductoRowMapper implements RowMapper<Producto>{
 		producto.setReferencia(rs.getString("REFERENCIA"));
 		producto.setPrecio(rs.getInt("PRECIO"));
 		producto.setStock(rs.getInt("STOCK"));
+		producto.setImagenBase64(rs.getString("IMAGEN"));
 		return producto;
 	}
-	
+
 }

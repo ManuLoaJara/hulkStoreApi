@@ -30,4 +30,9 @@ public class ProductosController {
 	public Boolean compra(@RequestBody List<Producto> request){
 		return service.compra(request);
 	}
+	
+	@PostMapping("/addProduct")
+	public Boolean addProduct(@RequestBody Producto request){
+		return service.addProduct(request);
+	}
 }
